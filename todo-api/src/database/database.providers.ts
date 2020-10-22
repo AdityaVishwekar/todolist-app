@@ -1,6 +1,6 @@
 import { Provider } from "@nestjs/common/interfaces";
 import { Client, ClientConfig } from 'pg';
-const HOST_NAME = process.env.DB_HOST_NAME || 'db';
+const HOST_NAME = process.env.DB_HOST_NAME || '0.0.0.0';
 const DB_NAME = process.env.DB_NAME || 'uat_dev';
 const clientConfig: ClientConfig = {
   host: HOST_NAME,

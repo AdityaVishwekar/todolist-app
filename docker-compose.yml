@@ -39,7 +39,7 @@ services:
     depends_on:
       - db
     environment:
-      HOST_NAME: db
+      DB_HOST_NAME: db
     restart: always
 
 networks:

@@ -16,3 +16,9 @@ Solution - The 0.0.0.0 is the listening address, it's used to listen on all inte
 ```
 Update HOST_NAME in ./todo-api/src/database/database.providers.ts
 ```
+
+Solution2 - Add env variable
+```
+environment:
+      DB_HOST_NAME: db
+```
