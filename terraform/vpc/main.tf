@@ -116,6 +116,24 @@ resource "aws_security_group_rule" "http_inbound_access" {
   cidr_blocks       = ["0.0.0.0/0"]
 }
 
+resource "aws_security_group_rule" "postgres_inbound_access" {
+  from_port         = 5432
+  protocol          = "tcp"
+  security_group_id = aws_security_group.test_sg.id
+  to_port           = 5432
+  type              = "ingress"
+  cidr_blocks       = ["0.0.0.0/0"]
+}
+
+resource "aws_security_group_rule" "todoapi_inbound_access" {
+  from_port         = 3000
+  protocol          = "tcp"
+  security_group_id = aws_security_group.test_sg.id
+  to_port           = 3000
+  type              = "ingress"
+  cidr_blocks       = ["0.0.0.0/0"]
+}
+
 # All OutBound Access
 resource "aws_security_group_rule" "all_outbound_access" {
   from_port         = 0

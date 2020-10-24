@@ -81,6 +81,15 @@ resource "aws_security_group_rule" "inbound_http" {
   cidr_blocks       = ["0.0.0.0/0"]
 }
 
+resource "aws_security_group_rule" "inbound_backend" {
+  from_port         = 3000
+  protocol          = "tcp"
+  security_group_id = aws_security_group.my-alb-sg.id
+  to_port           = 3000
+  type              = "ingress"
+  cidr_blocks       = ["0.0.0.0/0"]
+}
+
 resource "aws_security_group_rule" "outbound_all" {
   from_port         = 0
   protocol          = "-1"
